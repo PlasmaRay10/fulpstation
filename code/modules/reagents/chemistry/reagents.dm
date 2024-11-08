@@ -42,8 +42,6 @@
 	var/reagent_weight = 1
 	///is it currently metabolizing
 	var/metabolizing = FALSE
-	//determines if substance follows fluid_dynamic principles (if the liquid flows)
-	var/fluid_dynamic = FALSE
 	/// Are we from a material? We might wanna know that for special stuff. Like metalgen. Is replaced with a ref of the material on New()
 	var/datum/material/material
 	///A list of causes why this chem should skip being removed, if the length is 0 it will be removed from holder naturally, if this is >0 it will not be removed from the holder.
