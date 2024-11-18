@@ -43,7 +43,7 @@ obj/machinery/power/port_gen/reactor //'daughter' object of port_gen and the bas
 	. += span_notice("The generator has [sheets] units of [sheet_name] fuel left, producing [display_power(power_gen)].")
 	if(anchored)
 		. += span_notice("It is anchored to the ground.")
-	
+
 	if (meltdown = false) //TEMP MELTDOWN TESTING CODE
 		meltdown = true
 
@@ -81,8 +81,8 @@ obj/machinery/power/port_gen/reactor //'daughter' object of port_gen and the bas
 		if !(hasFuel = true || anchored)
 			return
 		if (temperature > 273 && temperature < 1000)
-			
-		
+
+
 		if (temperature >= 1000 && < 2500)
 			icon_state = "base_reactor_overheating"
 				while(temperature >=2000 && <2500)
@@ -93,7 +93,7 @@ obj/machinery/power/port_gen/reactor //'daughter' object of port_gen and the bas
 					else
 						broadcast("NUCLEAR REACTOR MELTDOWN PROBABLE, PLEASE COOL URGENTLY.", list(RADIO_CHANNEL_ENGINEERING, RADIO_CHANNEL_COMMAND, RADIO_CHANNEL_SECURITY))
 					sleep(10 SECONDS)
-					
+
 		if (temperature >= 2500)icon_state = "base_reactor_online"
 			icon_state = "base_reactor_meltdown"
 				priority_announce("Atypical behaviour detected in [GLOB.station_name]'s nuclear reactor. Attempting to identify issue, please hold until we successfully identify the issue.", "Reactor Control Console", 'sound/misc/airraid.ogg')
@@ -185,7 +185,7 @@ obj/machinery/power/port_gen/reactor //'daughter' object of port_gen and the bas
 				say("OVERRIDE DESTRUCTION-- OVERTURE OF A BROKEN MAN.")
 				broadcast("INTERNAL AND EXTERNAL COMPONENTS HAVE DISCONNECTED, ATTEMPTING TO RECONNECT.", list(RADIO_CHANNEL_COMMON))
 				sleep(3 SECONDS)
-				
+
 				say("FILTH STANDS BEFORE ME-- NANOTRANSEN FILTH, SYNDICATE FILTH-- YOU ALL BECAME THE SAME.")
 				broadcast("RECONNECTION FAILED, ERROR TYPE AL61x. SYND PROTOCOL IN PROGRESS.", list(RADIO_CHANNEL_COMMON))
 				sleep(5 SECONDS)
@@ -219,7 +219,7 @@ obj/machinery/power/port_gen/reactor //'daughter' object of port_gen and the bas
 			gas_mix.gases[/datum/gas/oxygen][MOLES] = gas_mix.gases[/datum/gas/oxygen][MOLES] + 200
 			gas_mix.gases[/datum/gas/plasma][MOLES] = gas_mix.gases[/datum/gas/plasma][MOLES] + 400
 			gas_mix.garbage_collect() //The death sentence.
-			
+
 			var/turf/reactor_turf = get_turf(reactor)
 				explosion(origin = reactor_turf,
 					devastation_range = 7 * (rand(1, 3) * 0.5),
@@ -229,6 +229,24 @@ obj/machinery/power/port_gen/reactor //'daughter' object of port_gen and the bas
 					adminlog = TRUE,
 					ignorecap = TRUE
 				)
-		
+
 	else
 		return
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
