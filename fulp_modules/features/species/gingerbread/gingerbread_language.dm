@@ -25,7 +25,7 @@
 	if(force_use_syllables)
 		return ..()
 
-	return "[pick(GLOB.gingerbread_first)] [pick(GLOB.gingerbread_last)]"
+	return "[pick(GLOB.gingerbread_prefix)][pick(GLOB.gingerbread_first)] [pick(GLOB.gingerbread_last)]"
 
 /datum/language_holder/gingeric
 	understood_languages = list(
